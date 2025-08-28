@@ -1,0 +1,34 @@
+version: '3.9'
+
+services:
+  mongo_primary:
+    image: mongo:6
+    container_name: mongo_primary
+    restart: always
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: primarydb
+
+  mongo_secondary:
+    image: mongo:6
+    container_name: mongo_secondary
+    restart: always
+    ports:
+      - "27018:27017"
+    environment:
+      MONGO_INITDB_DATABASE: secondarydb
+
+  node_app:
+    build: .
+    container_name: node_app
+    command: ["npm", "start"]
+    working_dir: /usr/src/app
+    volumes:
+      - .:/usr/src/app
+    depends_on:
+      - mongo_primary
+      - mongo_secondary
+    environment:
+      MONGO_URL_PRIMARY: mongodb://mongo_primary:27017/primarydb
+      MONGO_URL_SECONDARY: mongodb://mongo_secondary:27017/secondarydb

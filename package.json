@@ -1,0 +1,17 @@
+{
+  "name": "multiple-connections-node-mongoose",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node src/index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mongoose": "8.18.0"
+  },
+  "engines": {
+    "node": "20.9.0"
+  }
+}
