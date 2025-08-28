@@ -19,16 +19,15 @@ Este projeto demonstra como se conectar a múltiplos bancos MongoDB em uma aplic
 
 ## 📂 Estrutura do projeto
 
-project/
-├── docker-compose.yml
-├── Dockerfile
-├── package.json
-└── src/
-    ├── database.js
-    ├── index.js
-    └── models/
-        ├── User.js
-        └── Report.js
+- ├── docker-compose.yml
+- ├── Dockerfile
+- ├── package.json
+- └── src/
+    - ├── database.js
+    - ├── index.js
+    - └── models/
+        - ├── User.js
+        - └── Report.js
 
 ## ▶️ Como rodar o projeto
 
